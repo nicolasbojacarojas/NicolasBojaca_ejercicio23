@@ -2,11 +2,11 @@
 #include <cmath>
 using std::cout;
 using std::endl;
-void inicio(double *un, double *uv, double dt, double dx, int n, double c);
+void inicio(double *un, double *uv, double *up, double dt, double dx, int n, double c);
 void cambio(double *un, double *uv, double *up , int n);
 void evolucion(double *un, double *uv, double *up, double dt, double dx, int n, double c);
 
-void inicio(double *un, double *uv, double dt, double dx, int n, double c)
+void inicio(double *un, double *uv, double *up, double dt, double dx, int n, double c)
 {
 	double a = pow(c*dt/dx,2);
 	uv[0] = 0.0;
@@ -54,7 +54,7 @@ int main()
 	double *un = new double [n];
 	double *up = new double [n];
 	double *uv = new double [n];
-	inicio(un, uv, dt, dx, n, c);
+	inicio(un, uv, up, dt, dx, n, c);
 	cambio(un, uv, up, n);
 	double x = 0;
 	for (int i =0; i <n; i++ )
